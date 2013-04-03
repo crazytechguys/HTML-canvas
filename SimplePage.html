@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function Desenhar() {
+
+            //Buscar o Canvas para desenhar (get canvas to draw)
+            var c = document.getElementById("ctgCanvas");
+            //criar um contexto em 2d (creating a 2d context)
+            var ctx = c.getContext("2d");
+            
+            ctx.beginPath();
+
+            //olho esquerdo (left eye)
+            ctx.moveTo(40, 55);
+            ctx.lineTo(75, 55);
+
+            //olho direito (right eye)
+            ctx.moveTo(125, 55);
+            ctx.lineTo(155, 55);
+
+            //Nariz (nose)
+            ctx.moveTo(100, 65);
+            ctx.lineTo(80, 85);
+            ctx.lineTo(110, 85);
+
+            //Boca (mouth)
+            ctx.moveTo(150, 100);
+            ctx.arc(100, 100, 50, 0, 1 * Math.PI, false);
+
+            //desenhar
+            ctx.stroke();
+        }
+
+    </script>
+
+</head>
+<body onload="Desenhar()">
+  <canvas id="ctgCanvas" width="185" height="180" style="border:1px solid #000000;"></canvas>
+</body>
+</html>
